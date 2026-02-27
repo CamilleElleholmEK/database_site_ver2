@@ -1,0 +1,309 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Generelt */
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  margin: 0 auto;
+  width: 90vw;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+p {
+  font-size: 1.2rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+header {
+  margin-bottom: 2.2rem;
+}
+
+nav a {
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+#logo_type:hover {
+  transform: scale(1.02);
+}
+
+#logo_type {
+  font-family:
+    Raleway,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+footer {
+  margin-top: 1rem;
+}
+
+/* Index */
+
+.hero_wrap {
+  width: 90vw;
+  height: 65vw;
+  margin-bottom: 1rem;
+}
+
+.hero_wrap img {
+  object-fit: cover;
+  width: 90vw;
+  height: 65vw;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* .category_card img {
+  height: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+} */
+
+/* .category_card {
+  display: grid;
+} */
+
+.category_card:hover {
+  transform: scale(1.02);
+}
+
+/* .category_card img,
+.category_card p {
+  grid-column: 1;
+  grid-row: 1;
+} */
+
+.category_card {
+  width: 45vw;
+  color: white;
+  font-size: 1.5rem;
+  background-color: black;
+  place-self: center;
+  z-index: 2;
+  padding: 1rem 1rem;
+}
+
+/* Productlist */
+
+.price {
+  color: red;
+  display: flex;
+}
+
+.product_card:hover {
+  transform: scale(1.02);
+}
+
+.hide {
+  display: none;
+}
+
+.price_before {
+  text-decoration: line-through;
+  color: gray;
+  margin-right: 1rem;
+}
+
+.img_wrap {
+  display: grid;
+}
+
+.img_wrap img,
+.soldout_text,
+.sale {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.soldout {
+  opacity: 80%;
+  filter: brightness(40%);
+}
+
+.soldout_text,
+.sale {
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+.soldout_text {
+  background-color: black;
+  place-self: center;
+  z-index: 2;
+  padding: 1rem 2rem;
+}
+
+.sale {
+  place-self: start;
+  background-color: #8c0001;
+  z-index: 3;
+  padding: 0.2rem 1rem;
+  margin: 1rem;
+}
+
+.subtle {
+  color: gray;
+  margin-top: 0.3rem;
+}
+
+.list_grid {
+  display: grid;
+  gap: 3rem;
+}
+
+/* Product */
+
+.to_cart {
+  display: flex;
+  justify-content: flex-start;
+}
+.to_cart p {
+  color: white;
+  border-radius: 30px;
+  background-color: black;
+  padding: 0.2rem 1rem;
+  margin: 1rem 1rem 1rem 0;
+}
+
+.to_cart .stock {
+  color: black;
+  background-color: white;
+  border: black solid 1px;
+}
+
+.btn:hover {
+  transform: scale(1.04);
+  cursor: pointer;
+}
+
+.back {
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.back:hover {
+  font-weight: 500;
+}
+
+main .wrap {
+  margin-top: 1rem;
+}
+
+@media (min-width: 800px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 40vw auto;
+    gap: 1rem;
+  }
+
+  .hero_wrap {
+    width: 40vw;
+    height: 40vw;
+    margin-bottom: 0;
+  }
+
+  .hero_wrap img {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  .categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .hero h2 {
+    margin: auto;
+    text-align: center;
+  }
+
+  .category_card {
+    width: 30vw;
+  }
+
+  .list_grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .product_card {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    grid-column: span 4;
+  }
+
+  .detail_view {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .details {
+    margin-top: 1rem;
+  }
+
+  .details p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .details h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
