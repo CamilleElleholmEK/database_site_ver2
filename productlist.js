@@ -1,8 +1,8 @@
-console.log("prut");
+const urlcategory = new URLSearchParams(window.location.search).get("category");
 
 const container = document.querySelector(".list_grid");
-const endpoint = `https://kea-alt-del.dk/t7/api/products`;
-
+const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${urlcategory}`;
+document.querySelector("h2").textContent = urlcategory;
 function getData() {
   fetch(endpoint)
     .then((respons) => respons.json())
@@ -23,7 +23,7 @@ function showData(json) {
               />
               <p class="soldout_text">Udsolgt</p>
               <p class="sale soldout">
-                10
+                ${product.discount}
                 <span>%</span>
               </p>
             </div>
