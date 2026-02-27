@@ -11,14 +11,14 @@ function getData() {
 
 function showData(json) {
   let markup = "";
-  json.forEach((element) => {
-    console.log(element);
+  json.forEach((product) => {
+    console.log(product);
     markup += `<a href="product.html">
           <article class="product_card">
             <div class="img_wrap">
               <img
                 class="soldout"
-                src="https://kea-alt-del.dk/t7/images/webp/640/1534.webp"
+                src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"
                 alt="Produkt billede"
               />
               <p class="soldout_text">Udsolgt</p>
@@ -28,15 +28,15 @@ function showData(json) {
               </p>
             </div>
             <p class="subtle">
-              Tshirt
+              ${product.articletype}
               <span> | </span>
-              Puma
+              ${product.brandname}
             </p>
-            <h3>Navn på produkt 4</h3>
+            <h3>${product.productdisplayname}</h3>
             <div class="price">
               <p class="price_before">
                 DKK
-                <span>450</span>
+                <span>${product.price}</span>
                 ,-
               </p>
               <p class="price_after">
