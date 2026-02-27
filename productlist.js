@@ -1,0 +1,54 @@
+console.log("prut");
+
+const container = document.querySelector(".list_grid");
+const endpoint = `https://kea-alt-del.dk/t7/api/products`;
+
+function getData() {
+  fetch(endpoint)
+    .then((respons) => respons.json())
+    .then(showData);
+}
+
+function showData(json) {
+  let markup = "";
+  json.forEach((element) => {
+    console.log(element);
+    markup += `<a href="product.html">
+          <article class="product_card">
+            <div class="img_wrap">
+              <img
+                class="soldout"
+                src="https://kea-alt-del.dk/t7/images/webp/640/1534.webp"
+                alt="Produkt billede"
+              />
+              <p class="soldout_text">Udsolgt</p>
+              <p class="sale soldout">
+                10
+                <span>%</span>
+              </p>
+            </div>
+            <p class="subtle">
+              Tshirt
+              <span> | </span>
+              Puma
+            </p>
+            <h3>Navn på produkt 4</h3>
+            <div class="price">
+              <p class="price_before">
+                DKK
+                <span>450</span>
+                ,-
+              </p>
+              <p class="price_after">
+                DKK
+                <span>405</span>
+                ,-
+              </p>
+            </div>
+          </article>
+        </a>`;
+  });
+  container.innerHTML = markup;
+}
+
+getData();
