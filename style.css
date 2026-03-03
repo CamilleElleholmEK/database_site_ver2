@@ -139,8 +139,11 @@ footer {
 /* Productlist */
 
 .price {
-  color: red;
   display: flex;
+}
+
+.price_after {
+  color: red;
 }
 
 .product_card:hover {

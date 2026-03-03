@@ -19,15 +19,19 @@ function showData(json) {
   container.innerHTML = `<a class="back" href="productlist.html?category=${json.category}">Tilbage</a>
   <div class="detail_view">
   <div class="img_wrap wrap">
-          <img
+          <img class="${json.soldout && "soldout"}"
             src="https://kea-alt-del.dk/t7/images/webp/1000/${json.id}.webp"
             alt="${json.productdisplayname}"
           />
-          <p class="hide">Udsolgt</p>
-          <p class="sale">
-            ${json.discount}
-            <span>%</span>
-          </p>
+          ${json.soldout ? `<p class="soldout_text">Udsolgt</p>` : ""}
+          ${
+            json.discount
+              ? `<p class="sale ${json.soldout && "soldout"}">
+                ${json.discount}
+                <span>%</span>
+              </p>`
+              : ""
+          }
         </div>
         <div class="details">
           <p class="subtle">
@@ -37,16 +41,20 @@ function showData(json) {
           </p>
           <h3>${json.productdisplayname}</h3>
           <div class="price">
-            <p class="price_before">
+            <p class="${json.discount && "price_before"}">
               DKK
               <span>${json.price}</span>
               ,-
             </p>
-            <p class="price_after">
-              DKK
-              <span>${Math.round(priceAfter)}</span>
-              ,-
-            </p>
+            ${
+              json.discount
+                ? `<p class="price_after">
+                DKK
+                <span>${Math.round(priceAfter)}</span>
+                ,-
+              </p>`
+                : ""
+            }
           </div>
           <div class="to_cart">
             <p class="btn">Add to Cart</p>
