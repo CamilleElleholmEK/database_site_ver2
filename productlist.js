@@ -13,7 +13,7 @@ function showData(json) {
   let markup = "";
   json.forEach((product) => {
     console.log(product);
-    markup += `<a href="product.html">
+    markup += `<a href="productdetails.html?prut=${product.id}">
           <article class="product_card">
             <div class="img_wrap">
               <img
