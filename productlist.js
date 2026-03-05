@@ -5,16 +5,42 @@ const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${urlcategory}
 document.querySelector("h2").textContent = urlcategory;
 
 document
-  .querySelectorAll("button")
+  .querySelectorAll("#filter button")
   .forEach((knap) => knap.addEventListener("click", filter));
 
+document
+  .querySelectorAll("#sort button")
+  .forEach((knap) => knap.addEventListener("click", sorter));
+
 let allData;
+let udsnit;
+
+function sorter(e) {
+  if (e.target.dataset.price) {
+    if (e.target.dataset.price == "asc") {
+      udsnit.sort((a, b) => a.price - b.price);
+    } else {
+      udsnit.sort((a, b) => b.price - a.price);
+    }
+  } else {
+    if (e.target.dataset.text == "az") {
+      udsnit.sort((a, b) =>
+        a.productdisplayname.localeCompare(b.productdisplayname, "da"),
+      );
+    } else {
+      udsnit.sort((a, b) =>
+        b.productdisplayname.localeCompare(a.productdisplayname, "da"),
+      );
+    }
+  }
+  showData(udsnit);
+}
 
 function getData() {
   fetch(endpoint)
     .then((respons) => respons.json())
     .then((data) => {
-      allData = data;
+      allData = udsnit = data;
       showData(allData);
     });
 }
@@ -22,18 +48,16 @@ function getData() {
 function filter(e) {
   const valgt = e.target.textContent;
   if (valgt == "All") {
-    showData(allData);
+    udsnit = allData;
   } else {
-    const udsnit = allData.filter((element) => element.gender == valgt);
-    showData(udsnit);
+    udsnit = allData.filter((element) => element.gender == valgt);
   }
+  showData(udsnit);
 }
 
 function showData(json) {
-  console.log(json);
   let markup = "";
   json.forEach((product) => {
-    console.log(product);
     let discountPercent = `${product.discount}`;
     let price = `${product.price}`;
     let priceDivided = price / 100;
