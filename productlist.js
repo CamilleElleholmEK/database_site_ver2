@@ -5,10 +5,35 @@ const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${urlcategory}
 document.querySelector("h2").textContent = urlcategory;
 
 document
-  .querySelectorAll("button")
+  .querySelectorAll("#filter button")
   .forEach((knap) => knap.addEventListener("click", filter));
 
+document
+  .querySelectorAll("#sort button")
+  .forEach((knap) => knap.addEventListener("click", sorter));
+
 let allData;
+
+function sorter(e) {
+  if (e.target.dataset.price) {
+    if (e.target.dataset.price == "asc") {
+      allData.sort((a, b) => a.price - b.price);
+    } else {
+      allData.sort((a, b) => b.price - a.price);
+    }
+  } else {
+    if (e.target.dataset.text == "az") {
+      allData.sort((a, b) =>
+        a.productdisplayname.localeCompare(b.productdisplayname, "da"),
+      );
+    } else {
+      allData.sort((a, b) =>
+        b.productdisplayname.localeCompare(a.productdisplayname, "da"),
+      );
+    }
+  }
+  showData(allData);
+}
 
 function getData() {
   fetch(endpoint)
@@ -30,10 +55,8 @@ function filter(e) {
 }
 
 function showData(json) {
-  console.log(json);
   let markup = "";
   json.forEach((product) => {
-    console.log(product);
     let discountPercent = `${product.discount}`;
     let price = `${product.price}`;
     let priceDivided = price / 100;
