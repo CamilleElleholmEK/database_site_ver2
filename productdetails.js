@@ -18,7 +18,7 @@ function showData(json) {
   let priceAfter = price - discount;
   container.innerHTML = `<a class="back" href="productlist.html?category=${json.category}">Tilbage</a>
   <div class="detail_view">
-  <div class="img_wrap wrap">
+  <div id="detail_img" class="img_wrap">
           <img class="${json.soldout && "soldout"}"
             src="https://kea-alt-del.dk/t7/images/webp/1000/${json.id}.webp"
             alt="${json.productdisplayname}"
