@@ -13,33 +13,34 @@ document
   .forEach((knap) => knap.addEventListener("click", sorter));
 
 let allData;
+let udsnit;
 
 function sorter(e) {
   if (e.target.dataset.price) {
     if (e.target.dataset.price == "asc") {
-      allData.sort((a, b) => a.price - b.price);
+      udsnit.sort((a, b) => a.price - b.price);
     } else {
-      allData.sort((a, b) => b.price - a.price);
+      udsnit.sort((a, b) => b.price - a.price);
     }
   } else {
     if (e.target.dataset.text == "az") {
-      allData.sort((a, b) =>
+      udsnit.sort((a, b) =>
         a.productdisplayname.localeCompare(b.productdisplayname, "da"),
       );
     } else {
-      allData.sort((a, b) =>
+      udsnit.sort((a, b) =>
         b.productdisplayname.localeCompare(a.productdisplayname, "da"),
       );
     }
   }
-  showData(allData);
+  showData(udsnit);
 }
 
 function getData() {
   fetch(endpoint)
     .then((respons) => respons.json())
     .then((data) => {
-      allData = data;
+      allData = udsnit = data;
       showData(allData);
     });
 }
@@ -47,11 +48,11 @@ function getData() {
 function filter(e) {
   const valgt = e.target.textContent;
   if (valgt == "All") {
-    showData(allData);
+    udsnit = allData;
   } else {
-    const udsnit = allData.filter((element) => element.gender == valgt);
-    showData(udsnit);
+    udsnit = allData.filter((element) => element.gender == valgt);
   }
+  showData(udsnit);
 }
 
 function showData(json) {
