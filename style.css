@@ -12,29 +12,24 @@ img {
 
 /* Generelt */
 body {
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+  font-family: "Inter", sans-serif;
+  background-color: #fdfdfd;
+}
+
+main {
   margin: 0 auto;
   width: 90vw;
 }
 
 h2 {
+  font-family: "Space Grotesk", sans-serif;
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 1rem;
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 400;
 }
 p {
   font-size: 1.2rem;
@@ -46,42 +41,77 @@ a {
 }
 
 header {
-  margin-bottom: 2.2rem;
+  margin-bottom: 3rem;
+  background-color: #181715;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 3px #aa1c1a;
+}
+
+nav {
+  align-self: center;
+  padding-right: 2rem;
 }
 
 nav a {
   font-size: 1.2rem;
+  color: #fdfdfd;
+  margin-left: 1.5rem;
+  font-weight: 400;
 }
 
 nav a:hover {
   text-decoration: underline;
 }
 
-#logo_type:hover {
+.logo_type:hover {
   transform: scale(1.02);
 }
 
-#logo_type {
-  font-family:
-    Raleway,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+.logo_type {
+  font-family: "Space Grotesk", sans-serif;
   font-size: 3rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+
+  padding: 2rem;
+  color: #fdfdfd;
+  font-weight: 500;
+}
+
+.logo_type span {
+  color: #aa1c1a;
 }
 
 footer {
-  margin-top: 1rem;
+  margin-top: 3rem;
+  background-color: #e8e8e8;
+}
+
+#gray_footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#gray_footer h1,
+#gray_footer a {
+  color: #181715;
+}
+
+.socials {
+  padding: 1rem 1rem 1rem 2rem;
+  background-color: #181715;
+  border-top: solid 3px #aa1c1a;
+}
+
+.socials span {
+  color: #aa1c1a;
+  text-align: center;
+  font-weight: 700;
+  background-color: #fdfdfd;
+  border-radius: 100%;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: inline-block;
+  margin-right: 1rem;
 }
 
 /* Index */
@@ -138,16 +168,57 @@ footer {
 
 /* Productlist */
 
+.btns {
+  display: flex;
+  justify-content: left;
+  margin-top: 3rem;
+}
+
+#filter button,
+#sort button {
+  margin: 1rem 1.4rem 3rem 0;
+  font-family: "Inter", sans-serif;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#filter button:hover,
+#sort button:hover {
+  text-decoration: underline;
+}
+
+#filter p,
+#sort p {
+  font-size: 1.1rem;
+}
+
+#sort {
+  margin-left: 2rem;
+}
+
 .price {
   display: flex;
 }
 
 .price_after {
-  color: red;
+  color: #aa1c1a;
+  font-size: 1.1rem;
 }
 
 .product_card:hover {
   transform: scale(1.02);
+}
+
+.product_card {
+  border: solid #181715 1px;
+  padding: 1.2rem;
+}
+
+.product_card h3 {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 .hide {
@@ -158,6 +229,7 @@ footer {
   text-decoration: line-through;
   color: gray;
   margin-right: 1rem;
+  font-size: 1.1rem;
 }
 
 .img_wrap {
@@ -178,17 +250,17 @@ footer {
 
 .soldout_text,
 .sale {
-  color: white;
+  color: #fdfdfd;
   font-size: 1.5rem;
-  border-radius: 30px;
-  font-weight: 500;
+
+  font-weight: 400;
 }
 
 .soldout_text {
-  background-color: black;
+  background-color: #18171580;
   place-self: center;
   z-index: 2;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
 }
 
 .sale {
@@ -202,11 +274,12 @@ footer {
 .subtle {
   color: gray;
   margin-top: 0.3rem;
+  font-size: 1.1rem;
 }
 
 .list_grid {
   display: grid;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 /* Product */

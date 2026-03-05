@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap"
       rel="stylesheet"
     />
     <script src="productlist.js" defer></script>
@@ -16,7 +16,7 @@
   <body>
     <header>
       <a href="index.html">
-        <h1 id="logo_type">Logo type</h1>
+        <h1 class="logo_type">Fashion <span>&</span> more</h1>
       </a>
       <nav>
         <a href="index.html">Categories</a>
@@ -26,20 +26,40 @@
     </header>
     <main>
       <h2></h2>
-      <div id="filter">
-        <button>All</button>
-        <button>Unisex</button>
-        <button>Women</button>
-        <button>Men</button>
-      </div>
-      <div id="sort">
-        <button data-text="az">A-Z</button>
-        <button data-text="za">Z-A</button>
-        <button data-price="asc">Pris stigende</button>
-        <button data-price="dec">Pris faldende</button>
-      </div>
+      <section class="btns">
+        <div id="filter">
+          <p>Gender</p>
+          <button>All</button>
+          <button>Unisex</button>
+          <button>Women</button>
+          <button>Men</button>
+        </div>
+        <div id="sort">
+          <p>Sort</p>
+          <button data-text="az">A-Z</button>
+          <button data-text="za">Z-A</button>
+          <button data-price="asc">Price ascending</button>
+          <button data-price="dec">Price descending</button>
+        </div>
+      </section>
       <section class="list_grid"></section>
     </main>
-    <footer>Footer?</footer>
+    <footer>
+      <div id="gray_footer">
+        <a href="index.html">
+          <h1 class="logo_type">Fashion <span>&</span> more</h1>
+        </a>
+        <nav>
+          <a href="index.html">Categories</a>
+          <a href="/">Brands</a>
+          <a href="/">Seasons</a>
+        </nav>
+      </div>
+      <div class="socials">
+        <span>!</span>
+        <span>?</span>
+        <span>#</span>
+      </div>
+    </footer>
   </body>
 </html>
