@@ -284,15 +284,23 @@ footer {
 
 /* Product */
 
+#detail_img,
+.details {
+  border: #181715 solid 1px;
+  padding: 1.2rem;
+  margin-top: 3rem;
+}
+
 .to_cart {
   display: flex;
   justify-content: flex-start;
 }
 .to_cart p {
-  color: white;
-  border-radius: 30px;
-  background-color: black;
-  padding: 0.2rem 1rem;
+  background-color: #181715;
+  color: #fdfdfd;
+  place-self: center;
+  z-index: 2;
+  padding: 0.5rem 2rem;
   margin: 1rem 1rem 1rem 0;
 }
 
@@ -358,12 +366,8 @@ main .wrap {
 
   .detail_view {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .details {
-    margin-top: 1rem;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
   }
 
   .details p {
